@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 # Inputs with try-catch block
 while True:
     try:
@@ -13,6 +14,10 @@ stars = 0
 limit = 60
 time = 0
 
+# list for matplot
+xAxis = []
+yAxis = []
+
 # functions
 def distance(a,t):
     return int(0.5*a*(t**2))
@@ -22,6 +27,8 @@ def finalSpeed(a,t):
 
 #Distance loop
 while time <= end:
+    xAxis.append(time)
+    yAxis.append(distance(acc,time))
     stars = (distance(acc,time)/10)
     print("Duration:"+str(time)+" Distance:"+"*"*int(stars))
     time += 1
@@ -37,3 +44,9 @@ if distance(acc,end) >= dist:
     print("The person reached the destination (Reached "+str(distance(acc,end))+" m)")
 else:
     print("The person did not reach the destination (Reached "+str(distance(acc,end))+" m)")
+
+# plot graph
+plt.plot(xAxis,yAxis)
+plt.ylabel("Distance (m)")
+plt.xlabel("Time (s)")
+plt.show()
