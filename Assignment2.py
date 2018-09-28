@@ -32,6 +32,8 @@ def aliceAndBob(numTry):
         numTry -= 1
     if winner.count("Bob") > winner.count("Alice"):
         print("Bob Wins!")
+    elif winner.count("Bob") == winner.count("Alice"):
+        print("It's a draw!")
     else:
         print("Alice Wins!")
 
@@ -56,26 +58,28 @@ def cupsAndBall(moves):
 
 
 # user calls for which function
-status = input("""
-******************************************
-* Which fucntion would you like to call? *
-* Function 1: \"Name Shortener\"           *
-* Function 2: \"modul42\"                  *
-* Function 3: \"aliceAndBob\"              *
-* Function 4: \"cupsAndBall\"              *
-* Type \"exit\" to end program             *
-******************************************
-Input: """)
-# if statement checks user input
-if status == "1":
-    kmp(input("Insert a name (capitalized): "))
-elif status == "2":
-    modul42()
-elif status == "3":
-    aliceAndBob(int(input("Insert the number of tries: ")))
-elif status == "4":
-    cupsAndBall(int(input("How many moves?")))
-elif status.lower() == "exit":
-    print("Program terminated")
-else:
-    print("Unknown command!")
+while True:
+    status = input("""
+    ******************************************
+    * Which fucntion would you like to call? *
+    * Function 1: \"Name Shortener\"           *
+    * Function 2: \"modul42\"                  *
+    * Function 3: \"aliceAndBob\"              *
+    * Function 4: \"cupsAndBall\"              *
+    * Type \"exit\" to end program             *
+    ******************************************
+    Input: """)
+    # if statement checks user input
+    if status == "1":
+        kmp(input("Insert a name (capitalized): "))
+    elif status == "2":
+        modul42()
+    elif status == "3":
+        aliceAndBob(int(input("Insert the number of tries: ")))
+    elif status == "4":
+        cupsAndBall(int(input("How many moves?")))
+    elif status.lower() == "exit":
+        print("Program terminated")
+        break
+    else:
+        print("Unknown command!")
