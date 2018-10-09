@@ -35,5 +35,9 @@ class SpaceShip:
         self.rect.centerx = self.centerx
         self.rect.centery = self.centery
 
+    def centerShip(self):
+        self.centerx = self.screen_rect.centerx
+        self.centery = self.screen_rect.bottom - self.rect.height/2
+
     def blipme(self):
         self.screen.blit(self.image, self.rect)
