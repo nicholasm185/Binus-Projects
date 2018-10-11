@@ -7,7 +7,7 @@ class Bullet(Sprite):
         super(Bullet,self).__init__()
         self.screen = screen
 
-        self.image = pygame.image.load(".\\images\\yee.png")
+        self.image = pygame.image.load(".\\images\\man.bmp")
 
         # self.rect = pygame.Rect(0, 0, setting.bulletWidth, setting.bulletHeight)
         self.rect = self.image.get_rect()

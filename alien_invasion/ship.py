@@ -1,8 +1,10 @@
 import pygame
+from pygame.sprite import Sprite
 
-class SpaceShip:
+class SpaceShip(Sprite):
 
     def __init__(self, settings, screen):
+        super(SpaceShip, self).__init__()
         self.screen = screen
         self.speedSet = settings
 
